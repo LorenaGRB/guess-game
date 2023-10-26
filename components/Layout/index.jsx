@@ -1,11 +1,9 @@
-import { ImageBackground, SafeAreaView, StyleSheet } from "react-native";
+import React from "react";
+import { ImageBackground, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import InititalGame from "./views/InitialGame";
-import { COLORS } from "./utils/constants";
+import { COLORS } from "../../utils/constants";
 
-export default function App() {
-  const screen = <InititalGame />;
-  const image = require("./assets/background.png");
+function Layout() {
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient
@@ -22,20 +20,11 @@ export default function App() {
           imageStyle={{ opacity: 0.3 }}
           style={styles.container}
         >
-          {screen}
+          {children}
         </ImageBackground>
       </LinearGradient>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
-    margin: 0,
-    padding: 0,
-  },
-});
+export default Layout;
