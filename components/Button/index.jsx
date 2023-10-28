@@ -1,21 +1,12 @@
 import React from "react";
 import { Pressable, View, Text } from "react-native";
-import { COLORS } from "../../utils/constants";
+import { styles } from "./styles";
 
 function Button({ children }) {
   return (
-    <View
-      style={{
-        width: "40%",
-        height: 60,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: COLORS.ROSE_TEXT,
-        borderRadius: 10,
-      }}
-    >
+    <View style={styles.container}>
       <Pressable>
-        <Text style={{ color: COLORS.BLACK }}>{children}</Text>
+        <Text style={styles.text}>{children}</Text>
       </Pressable>
     </View>
   );

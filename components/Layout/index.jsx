@@ -1,24 +1,17 @@
 import React from "react";
 import { ImageBackground, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { COLORS } from "../../utils/constants";
+import { styles } from "./styles";
 
-function Layout() {
+function Layout({ children }) {
+  const image = require("../../assets/background.png");
   return (
     <SafeAreaView style={styles.container}>
-      <LinearGradient
-        colors={[
-          COLORS.ROSE_GRADIENT_1,
-          COLORS.ROSE_GRADIENT_2,
-          COLORS.ROSE_GRADIENT_3,
-        ]}
-        style={styles.container}
-      >
+      <LinearGradient colors={styles.colors}>
         <ImageBackground
           source={image}
           resizeMode="cover"
-          imageStyle={{ opacity: 0.3 }}
-          style={styles.container}
+          imageStyle={styles.image}
         >
           {children}
         </ImageBackground>
